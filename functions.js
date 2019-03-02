@@ -84,13 +84,15 @@ function one() {
   xhr.send();
 }
 
-let search_button = document.querySelector(".search_button");
+//let search_button = document.querySelector(".search_button");
 let message = document.querySelector(".message");
+let weather_form = document.querySelector(".weather_form");
+weather_form.addEventListener('submit', getWeather);
 
-
-search_button.addEventListener('click', getWeather);
+//search_button.addEventListener('click', getWeather);
 
 function getWeather() {
+  let warning = document.querySelector(".warning");
   let apiKey = "466bb530a7d426fb42b230fdda00d5dc";
   let city = document.querySelector(".city");
   let output = '';
@@ -98,7 +100,10 @@ function getWeather() {
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let today = days[date.getDay()];
   cityValue = city.value;
-
+  if(cityValue === "") {
+    warning.innerHTML = "Please enter city";
+    return;
+  }
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' +cityValue+ '&units=metric'+ '&APPID='+apiKey);
   xhr.onload = function() {
@@ -123,6 +128,7 @@ function getWeather() {
       output += "</div>";
       message.style.display = "block";
       message.innerHTML = output;
+      warning.innerHTML = "";
     }
   }
   xhr.send();
