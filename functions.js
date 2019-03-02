@@ -10,7 +10,7 @@ function fourCity() {
   let output = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
@@ -30,7 +30,7 @@ function three() {
   let output = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=sydney&units=metric&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=sydney&units=metric&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
@@ -50,7 +50,7 @@ function two() {
   let output = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=cairo&units=metric&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=cairo&units=metric&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
@@ -70,7 +70,7 @@ function one() {
   let output = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
@@ -100,7 +100,7 @@ function getWeather() {
   cityValue = city.value;
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=' +cityValue+ '&units=metric'+ '&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' +cityValue+ '&units=metric'+ '&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
