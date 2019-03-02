@@ -84,14 +84,15 @@ function one() {
   xhr.send();
 }
 
-//let search_button = document.querySelector(".search_button");
 let message = document.querySelector(".message");
 let weather_form = document.querySelector(".weather_form");
-weather_form.addEventListener('submit', getWeather);
+weather_form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  getWeather(e);
+});
 
-//search_button.addEventListener('click', getWeather);
-
-function getWeather() {
+function getWeather(e) {
+  e.preventDefault();
   let warning = document.querySelector(".warning");
   let apiKey = "466bb530a7d426fb42b230fdda00d5dc";
   let city = document.querySelector(".city");
