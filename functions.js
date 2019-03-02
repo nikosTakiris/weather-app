@@ -104,12 +104,6 @@ function getWeather() {
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
-      console.log(data.weather[0].main);
-      console.log(data);
-      console.log(data.name);
-      console.log(data.weather[0].description);
-      console.log(Math.round(data.main.temp));
-      //message.innerHTML = display(data);
       let icon = data.weather[0].icon;
       let icon_src = 'https://openweathermap.org/img/w/'+icon+'.png';
       output += "<div class='card'>";
@@ -127,29 +121,9 @@ function getWeather() {
       output += "<div class='pressure'><p>Pressure: <span class='pressure_result'>"+data.main.pressure+"mb</span></p></div>";
       output += "</div>";
       output += "</div>";
-      //output += "<div class='temperature'><p>"+Math.round(data.main.temp)+" &deg;C</p><span class='min_max_tep'><p>Min."+data.main.temp_min+ " Max"+data.main.temp_max+ "</div>";
       message.style.display = "block";
       message.innerHTML = output;
     }
   }
   xhr.send();
 }
-
-
-
-/*
-function display(data) {
-
-  let icon = data.weather[0].icon;
-  let icon_src = 'http://openweathermap.org/img/w/'+icon+'.png';
-  //return "<div class='picture'><img src='"+icon_src+"'></div>"+
-  //"<div class='text'><p>"+data.name+" </p></div><div class='temperature'><p>"+Math.round(data.main.temp)+" C</p></div>";
-
-
-  let output = '';
-  output += "<div class='picture'><img src='"+icon_src+"'></div>";
-  output += "<div class='text'><p>"+data.name+"<span class='temperature'><p>"+Math.round(data.main.temp)+"&deg;C</p></span></p></div>";
-  return output;
-
-}
-*/
