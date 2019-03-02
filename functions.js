@@ -103,7 +103,7 @@ function getWeather() {
   if(cityValue === "") {
     warning.innerHTML = "Please enter city";
     return;
-  }
+  } else {
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' +cityValue+ '&units=metric'+ '&APPID='+apiKey);
   xhr.onload = function() {
@@ -132,4 +132,5 @@ function getWeather() {
     }
   }
   xhr.send();
+}
 }
