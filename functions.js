@@ -111,7 +111,7 @@ function getWeather() {
       console.log(Math.round(data.main.temp));
       //message.innerHTML = display(data);
       let icon = data.weather[0].icon;
-      let icon_src = 'http://openweathermap.org/img/w/'+icon+'.png';
+      let icon_src = 'https://openweathermap.org/img/w/'+icon+'.png';
       output += "<div class='card'>";
       output += "<div class='title'><p>"+data.name+ ", "+data.sys.country+ "</p></div>";
       output += "<div class='left_side'>";
