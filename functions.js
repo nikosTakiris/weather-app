@@ -87,7 +87,7 @@ function one() {
 let message = document.querySelector(".message");
 let weather_form = document.querySelector(".weather_form");
 let search_button = document.querySelector(".search_button");
-search_button.addEventListener('submit', getWeather);
+search_button.addEventListener('click', getWeather);
 
 function getWeather(e) {
   e.preventDefault();
