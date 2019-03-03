@@ -90,6 +90,10 @@ header p {
 }
 
 .app_container {
+  -webkit-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .5);
+  -moz-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .5);
+  -ms-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .5);
+  -o-box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .5);
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, .5);
   background: #fff;
   width:40%;
@@ -108,7 +112,6 @@ header p {
   margin-right: 20%;
   z-index: 1000;
   color: #606060;
-
 }
 
 input[type='text'] {
@@ -141,6 +144,7 @@ button {
   letter-spacing: 0.005rem;
   z-index: 1000;
   display: block;
+  -webkit-transition:0.7s;
   transition: 0.7s;
   margin: 30px auto;
   margin-bottom: 0;
@@ -158,6 +162,10 @@ button:hover {
   color: #fff;
   border-radius: 3px;
   display: none;
+  -webkit-animation: all ease-in-out modal 3s forwards;
+  -moz-animation: all ease-in-out modal 3s forwards;
+  -ms-animation: all ease-in-out modal 3s forwards;
+  -o-animation: all ease-in-out modal 3s forwards;
   animation: all ease-in-out modal 3s forwards;
   z-index: 20000;
   opacity: 0.85;
@@ -186,6 +194,10 @@ button:hover {
 }
 
 .close p:hover {
+  -webkit-transform:rotate(360deg);
+  -moz-transform:rotate(360deg);
+  -ms-transform:rotate(360deg);
+  -o-transform:rotate(360deg);
   transform:rotate(360deg);
 }
 
@@ -266,7 +278,7 @@ button:hover {
 
 .temperature p {
   font-size: 1.5rem;
-text-align: center;
+  text-align: center;
 }
 .description {
   margin-top: 20px;
@@ -280,12 +292,8 @@ text-align: center;
   color: #fff;
 }
 
-
 .humi {
   font-size: 0.8rem;
-  width: 45%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
   width: 21.333333333%;
   margin-left: 6%;
   margin-right: 6%;
@@ -299,6 +307,10 @@ text-align: center;
   width: 1.3rem;
   height: 25px;
   line-height: 0px;
+  -webkit-filter: brightness(0) invert(1);
+  -moz-filter: brightness(0) invert(1);
+  -ms-filter: brightness(0) invert(1);
+  -o-filter: brightness(0) invert(1);
   filter: brightness(0) invert(1);
 }
 
@@ -366,18 +378,11 @@ text-align: center;
     }
 }
 
-@media only screen and (max-width: 1300px) {
-  .message, .app_container {
-  }
-}
-
 @media only screen and (max-width: 1100px) {
   .message, .app_container {
     width: 65%;
   }
 }
-
-
 
 @media only screen and (max-width: 580px) {
   .message, .app_container {
@@ -410,11 +415,8 @@ text-align: center;
 }
 .card {
   height: auto;
-
 }
 }
-
-
 
 @media only screen and (max-width: 320px) {
   .two {
