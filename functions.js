@@ -89,6 +89,7 @@ let search_button = document.querySelector(".search_button");
 search_button.addEventListener('click', getWeather);
 
 function getWeather() {
+  console.log("ok");
   let warning = document.querySelector(".warning");
   let apiKey = "466bb530a7d426fb42b230fdda00d5dc";
   let city = document.querySelector(".city");
