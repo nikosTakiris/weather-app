@@ -136,11 +136,10 @@ function getWeather() {
 
 
 
-//window.addEventListener('load', fourCity);
-//window.addEventListener('load', one);
-//window.addEventListener('load', two);
-//window.addEventListener('load', three);
-
+window.addEventListener('load', fourCity);
+window.addEventListener('load', one);
+window.addEventListener('load', two);
+window.addEventListener('load', three);
 
 function fourCity() {
   let four = document.querySelector(".four");
@@ -148,12 +147,12 @@ function fourCity() {
   let output = '';
 
   let xhr = new XMLHttpRequest();
-  xhr.open('GET', 'http://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&APPID='+apiKey);
+  xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=tokyo&units=metric&APPID='+apiKey);
   xhr.onload = function() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
       let icon = data.weather[0].icon;
-      let icon_src = 'http://openweathermap.org/img/w/'+icon+'.png';
+      let icon_src = 'https://openweathermap.org/img/w/'+icon+'.png';
       output += "<div class='city_title'><p>"+data.name+"</p></div>";
       output += "<div class='city_temperature'><span class='city_picture'><img src='"+icon_src+"'></span><p>"+Math.round(data.main.temp)+"  &deg;C</p></div>";
       four.innerHTML = output;
