@@ -89,7 +89,8 @@ let message = document.querySelector(".message");
 
 search_button.addEventListener('click', getWeather);
 
-function getWeather() {
+function getWeather(e) {
+  e.preventDefault();
   let apiKey = "466bb530a7d426fb42b230fdda00d5dc";
   let city = document.querySelector(".city");
   let output = '';
@@ -104,7 +105,6 @@ function getWeather() {
     if(this.status == 200) {
       let data = JSON.parse(this.responseText);
 
-      //message.innerHTML = display(data);
       let icon = data.weather[0].icon;
       let icon_src = 'https://openweathermap.org/img/w/'+icon+'.png';
       output += "<div class='card'>";
