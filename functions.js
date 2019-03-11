@@ -133,10 +133,13 @@ function getWeather() {
 }
 }
 */
-window.addEventListener('load', fourCity);
-window.addEventListener('load', one);
-window.addEventListener('load', two);
-window.addEventListener('load', three);
+
+
+
+//window.addEventListener('load', fourCity);
+//window.addEventListener('load', one);
+//window.addEventListener('load', two);
+//window.addEventListener('load', three);
 
 
 function fourCity() {
