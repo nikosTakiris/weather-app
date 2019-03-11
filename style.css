@@ -370,6 +370,12 @@ button:hover {
   border: none;
   margin: 0 auto;
 }
+.warning {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #000;
+  font-weight: 600;
+}
 /*  MEDIA QUERIES */
 
 @media only screen and (max-width: 1500px) {

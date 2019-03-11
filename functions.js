@@ -91,6 +91,7 @@ search_button.addEventListener('click', getWeather);
 
 function getWeather(e) {
   e.preventDefault();
+  let warning = document.querySelector(".warning");
   let apiKey = "466bb530a7d426fb42b230fdda00d5dc";
   let city = document.querySelector(".city");
   let output = '';
@@ -98,7 +99,9 @@ function getWeather(e) {
   var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
   let today = days[date.getDay()];
   cityValue = city.value;
-
+  if(cityValue === "") {
+    warning.innerHTML = "Please write a city first";
+  } else {
   let xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' +cityValue+ '&units=metric'+ '&APPID='+apiKey);
   xhr.onload = function() {
@@ -128,4 +131,5 @@ function getWeather(e) {
     }
   }
   xhr.send();
+}
 }
