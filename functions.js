@@ -121,9 +121,10 @@ function getWeather(e) {
       output += "<div class='right_side'>";
       output += "<div class='temperature'><p>"+Math.round(data.main.temp)+" &deg;C</p></div>";
       output += "<div class='description'><p>"+data.weather[0].main+"</p></div>";
-      output += "<div class='humi'><p class='hum_img'><img src='weatherImages/drop.png'>"+data.main.humidity+"%</p></div>";
-      output += "<div class='wind'><p>Wind: <span class='wind_result'>"+data.wind.speed+"mph</span></p></div>";
-      output += "<div class='pressure'><p>Pressure: <span class='pressure_result'>"+data.main.pressure+"mb</span></p></div>";
+      //output += "<div class='humi'><p class='hum_img'><img src='weatherImages/drop.png'>"+data.main.humidity+"%</p></div>";
+      output += "<div class='humi hwp'><p>Humidity: <span class='wind_result'>"+data.main.humidity+"%</span></p></div>";
+      output += "<div class='wind hwp'><p>Wind: <span class='wind_result'>"+data.wind.speed+"mph</span></p></div>";
+      output += "<div class='pressure hwp'><p>Pressure: <span class='pressure_result'>"+data.main.pressure+"mb</span></p></div>";
       output += "</div>";
       output += "</div>";
 
